@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasnain Nageri | Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* Professional Blue */
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text-gray: #64748b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--dark); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; color: #94a3b8; margin-bottom: 2rem; }
+        .btn {
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #1d4ed8; }
+
+        /* Sections */
+        section { padding: 4rem 5%; }
+        h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .skill-tag {
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border-top: 4px solid var(--primary);
+        }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-card h3 { margin-bottom: 0.5rem; }
+        .project-card .tech-stack { font-size: 0.85rem; color: var(--primary); margin-bottom: 1rem; font-weight: bold; }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+        }
+        .social-links { margin-top: 1.5rem; }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: 0.3s;
+        }
+        .social-links a:hover { color: var(--primary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Hasnain.dev</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Hi, I'm Hasnain Nageri</h1>
+        <p>Software Engineer | Machine Learning Enthusiast | Full Stack Developer</p>
+        <p><small>Karachi, Pakistan | Class of 2028</small></p>
+        <br>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>I am a passionate Software Engineering student with experience in building large-scale systems and solving complex algorithmic problems. With a background in teaching and dynamic tracking, I combine technical expertise in Java, Python, and C++ with strong communication skills. My current focus is on Machine Learning and Full Stack Web Development.</p>
+        </div>
+    </section>
+
+    <section id="skills" style="background-color: #f1f5f9;">
+        <h2>Technical Arsenal</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Python (ML/AI)</span>
+            <span class="skill-tag">Java (OOP)</span>
+            <span class="skill-tag">C++ (DSA)</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">NLP</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <h3>🎬 Movie Recommendation System</h3>
+                <p class="tech-stack">Python • NLP • Cosine Similarity</p>
+                <p>A content-based filtering system that uses NLP on movie descriptions to recommend similar films. Utilizes TF-IDF vectorization for high accuracy.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>💼 Online Jobs Portal</h3>
+                <p class="tech-stack">React • Django • PostgreSQL</p>
+                <p>A full-stack application connecting employers and job seekers. Features user authentication, profile management, and database integration.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🏠 House Price Prediction</h3>
+                <p class="tech-stack">Machine Learning • Regression</p>
+                <p>An ML model utilizing Linear Regression and Random Forest to predict housing prices based on feature engineering and historical data.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🛰️ Satellite Control System</h3>
+                <p class="tech-stack">Java • OOP • Systems Design</p>
+                <p>A complex simulation managing satellite operations, demonstrating advanced Object-Oriented Programming concepts and system architecture.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🏧 ATM & Banking System</h3>
+                <p class="tech-stack">C++ • File Handling</p>
+                <p>A robust console-based banking system handling user transactions, account management, and secure data storage.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>📰 Fake News Detection</h3>
+                <p class="tech-stack">Python • Logistic Regression • SVM</p>
+                <p>An NLP project detecting misinformation using tokenization and stop-word removal on the Kaggle Fake News dataset.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <p>Open to opportunities in Software Engineering and AI.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/hasnain-nageri" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/hasnain-nageri" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:hasnainnager@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <br>
+        <p>📞 03129352712</p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.7;">© 2025 Hasnain Nageri. Built with Code.</p>
+    </footer>
+
+</body>
+</html>
