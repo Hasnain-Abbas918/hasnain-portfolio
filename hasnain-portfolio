@@ -1,0 +1,344 @@
+Samajh gaya. Yeh tasveer (picture) bohot professional hai aur portfolio ke "Hero Section" (sabse upar wala hissa) mein lagne ke liye perfect hai.
+
+Aapne "Demo" manga hai, toh pehle main aapko batata hoon ke yeh code add karne ke baad kaisa dikhega, aur phir main aapko poora code doonga.
+
+-----
+
+### 🌟 Demo: Kaisa Dikhega?
+
+Hum is tasveer ko "Creative aur Professional" banane ke liye yeh changes karenge:
+
+1.  **Shape:** Tasveer ko ek perfect **Circle (Gola)** mein kaatenge. Yeh modern portfolio ka standard design hai.
+2.  **Border & Glow:** Us circle ke gard aapki website ki theme color (Professional Blue) ka ek border aur halka sa **creative glow** (chamak) hoga.
+3.  **Layout:**
+      * **Laptop/PC par:** Aapki tasveer left side par hogi, aur aapka naam/intro right side par likha hoga. Yeh bohot balanced aur professional lagta hai.
+      * **Mobile par:** Tasveer upar center mein hogi, aur text uske neeche aayega.
+4.  **Animation:** Jab koi mouse tasveer ke upar le kar jayega, toh woh halki si zoom hogi (hover effect).
+
+-----
+
+### ✅ Step 1: Tasveer ko Save Karein (Sabse Zaroori)
+
+Code chalane se pehle aapko yeh karna hoga:
+
+1.  Jo tasveer aapne bheji hai, usko apne computer mein **ussi folder** mein save karein jahan aapki `index.html` file hai.
+2.  Tasveer ka naam change kar ke **`profile.png`** rakh dein. (Naam exactly yehi hona chahiye).
+
+-----
+
+### ✅ Step 2: Updated Final Code
+
+Neeche poora naya code hai. Is mein maine CSS mein changes kiye hain taake tasveer professional lage, aur HTML mein tasveer add ki hai.
+
+Apni purani `index.html` ka saara code delete karein aur yeh naya wala paste kar dein.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasnain Nageri | Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* Professional Blue */
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text-gray: #64748b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--dark); font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- UPDATED HERO SECTION STYLES --- */
+        .hero {
+            padding: 8rem 5%; /* Increased top padding */
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            width: 100%;
+            gap: 4rem;
+        }
+
+        /* Creative & Professional Picture Styles */
+        .profile-img-container {
+            flex-shrink: 0;
+        }
+        
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover; /* Ensures photo doesn't stretch */
+            border-radius: 50%; /* Circular shape */
+            border: 6px solid var(--primary); /* Professional blue border */
+            /* Creative glow effect */
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.5); 
+            transition: all 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 0 50px rgba(37, 99, 235, 0.8);
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; color: #94a3b8; margin-bottom: 2rem; }
+        
+        .btn {
+            padding: 0.8rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        .btn:hover { background: #1d4ed8; transform: translateY(-3px); }
+
+        /* Sections */
+        section { padding: 4rem 5%; }
+        h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+        
+        /* Education Card Styles */
+        .education-card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .edu-school { font-weight: bold; font-size: 1.2rem; }
+        .edu-year { float: right; color: var(--primary); font-weight: bold; }
+        .edu-detail { color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;}
+
+        /* Skills Grid */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .skill-tag {
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border-top: 4px solid var(--primary);
+        }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-card h3 { margin-bottom: 0.5rem; }
+        .project-card .tech-stack { font-size: 0.85rem; color: var(--primary); margin-bottom: 1rem; font-weight: bold; }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+        }
+        .social-links { margin-top: 1.5rem; }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: 0.3s;
+        }
+        .social-links a:hover { color: var(--primary); }
+
+        /* Responsive for Mobile */
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column-reverse; /* Stack image on top on mobile */
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-text { text-align: center; }
+            .hero h1 { font-size: 2.5rem; }
+            .profile-img { width: 220px; height: 220px; }
+            .nav-links { display: none; }
+            .edu-year { float: none; display: block; margin-bottom: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Hasnain.dev</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <br> Hasnain Nageri</h1>
+                <p>Software Engineer | Machine Learning Specialist | Full Stack Developer</p>
+                <p style="color: var(--primary); font-weight: bold;">Karachi, Pakistan | Class of 2028</p>
+                <br>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+            
+            <div class="profile-img-container">
+                <img src="profile.png" alt="Hasnain Nageri" class="profile-img">
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>I am a passionate Software Engineering student with experience in building large-scale systems and solving complex algorithmic problems. With a background in teaching and dynamic tracking, I combine technical expertise in Java, Python, and C++ with strong communication skills. My current focus is on Machine Learning and solving real-world data problems.</p>
+        </div>
+    </section>
+
+    <section id="education" style="background-color: #f8fafc;">
+        <h2>Education</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            
+            <div class="education-card">
+                <span class="edu-year">2024 – 2028 (Present)</span>
+                <div class="edu-school">Bachelor of Software Engineering (BSSE)</div>
+                <div class="edu-detail">Mehran University of Engineering & Technology (MUET)</div>
+            </div>
+
+            <div class="education-card">
+                <span class="edu-year">2022</span>
+                <div class="edu-school">Intermediate (Pre-Engineering)</div>
+                <div class="edu-detail">Hunza Public School & Degree College</div>
+            </div>
+
+            <div class="education-card">
+                <span class="edu-year">2021</span>
+                <div class="edu-school">Matriculation (Science)</div>
+                <div class="edu-detail">Government Boys High School GB</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Arsenal</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Python (ML/AI)</span>
+            <span class="skill-tag">TensorFlow & Keras</span>
+            <span class="skill-tag">Scikit-Learn</span>
+            <span class="skill-tag">Java (OOP)</span>
+            <span class="skill-tag">C++ (DSA)</span>
+            <span class="skill-tag">React & Django</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Git & GitHub</span>
+        </div>
+    </section>
+
+    <section id="projects" style="background-color: #f1f5f9;">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <h3>🏃 Human Activity Recognition</h3>
+                <p class="tech-stack">Python • Scikit-Learn • Random Forest</p>
+                <p>Uses sensor fusion data (accelerometer + gyroscope) from smartphones to predict activities like walking, running, or sitting. Analyzed the UCI HAR Dataset.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🗣️ Emotion Detection From Speech</h3>
+                <p class="tech-stack">Python • Librosa • MFCC • CNN</p>
+                <p>An Audio ML project extracting MFCC features to classify emotions (happy, angry, sad) from speech data using the RAVDESS dataset.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>🛑 Traffic Sign Recognition</h3>
+                <p class="tech-stack">Python • TensorFlow • CNN</p>
+                <p>Computer Vision system for autonomous driving concepts. Trains a Convolutional Neural Network (CNN) to identify traffic signs using the GTSRB benchmark.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>📊 Customer Churn Prediction</h3>
+                <p class="tech-stack">Python • Pandas • XGBoost</p>
+                <p>Business-focused ML model predicting customer attrition. Involves deep feature engineering and correlation analysis on telecom data.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>💼 Online Jobs Portal</h3>
+                <p class="tech-stack">React • Django • PostgreSQL</p>
+                <p>A full-stack application connecting employers and job seekers. Features user authentication, profile management, and database integration.</p>
+            </div>
+
+             <div class="project-card">
+                <h3>✍️ Handwritten Digit Recognition</h3>
+                <p class="tech-stack">Deep Learning • Keras • MNIST</p>
+                <p>Classic Deep Learning project achieving 98%+ accuracy in identifying handwritten digits from the MNIST dataset using CNN architecture.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <p>Open to opportunities in Software Engineering and AI.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/hasnain-nageri" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/hasnain-nageri" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:hasnainnager@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <br>
+        <p>📞 03129352712</p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.7;">© 2025 Hasnain Nageri. Built with Code.</p>
+    </footer>
+
+</body>
+</html>
+```# hasnain-portfolio
